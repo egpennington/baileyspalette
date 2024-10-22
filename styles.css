@@ -1,0 +1,32 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+font-size: 1.6em;
+}
+
+.color-scheme-show {
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(10em, 1fr));
+    margin: 2em auto 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.color-scheme-content {
+    
+}
+
+.color-scheme-content img {
+    height: 60vh;
+    width: 10em;
+}
