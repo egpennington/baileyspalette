@@ -1,6 +1,8 @@
 # Bailey's Palette - Unleash Your Colors
 
 Welcome to Bailey's Palette! Unleash your creativity and explore a vibrant world of colors with this interactive web application. Based on Scrimba's bootcamp solo project from Module 8, this app is built using HTML, CSS, JavaScript, and APIs.
+## Live site [netlify.app](https://baileyspalette.netlify.app/)
+## Scrimba fork (https://v1.scrimba.com/scrim/cod5548758739747f1d9e2502)
 
 ## Table of Contents
 - [Features](#features)
