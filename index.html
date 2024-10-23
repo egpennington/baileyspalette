@@ -21,18 +21,21 @@
             </span>
             <p class="tag"><i class="fa-solid fa-paintbrush"></i> Unleash your colors</p>
         </div>
-         <select id="choices" class="choices" name="choices">    
-            <option value="monochrome">monochrome</option>
-            <option value="monochrome-dark">monochrome-dark</option>
-            <option value="monochrome-light">monochrome-light</option>
-            <option value="analogic">analogic</option>
-            <option value="complement">complement</option>
-            <option value="analogic-complement">analogic-complement</option>
-            <option value="triad">triad</option>
-            <option value="quad">quad</option>
-        </select>
-        <input type="text" id="input-color" class="input-color">
-        <button class="btn">Get Hex Color <i class="fa-solid fa-palette"></i></button>        
+        <div class="input-choice">
+            <div id="user-input-hex" class="user-input-hex"></div>
+            <select id="choices" class="choices" name="choices">    
+                <option value="monochrome">monochrome</option>
+                <option value="monochrome-dark">monochrome-dark</option>
+                <option value="monochrome-light">monochrome-light</option>
+                <option value="analogic">analogic</option>
+                <option value="complement">complement</option>
+                <option value="analogic-complement">analogic-complement</option>
+                <option value="triad">triad</option>
+                <option value="quad">quad</option>
+            </select>
+            <input type="text" id="input-color" class="input-color" placeholder="enter hex ie b3b53b">
+            <button class="btn">Get Color Scheme <i class="fa-solid fa-palette"></i></button>
+        </div>        
         <div id="color-scheme-show" class="color-scheme-show"></div>
         <script src="main.js"></script>
     </body>
