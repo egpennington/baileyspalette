@@ -22,6 +22,7 @@ function renderColorScheme(colors) {
     });
 }
 
+// ==== Event Listeners ====
 document.getElementById("input-color").addEventListener("input", function() {
     document.getElementById("input-color") = this.value
     inputColor.style.backgroundColor = `#${inputColor}`
@@ -38,6 +39,7 @@ document.querySelector(".input-choice").addEventListener("submit", function(e) {
     fetch(`https://www.thecolorapi.com/scheme?hex=${inputColor}&mode=${choice}&count=6`)
         .then(res => res.json())
         .then(data => {
+            console.log(data)
             const colors = data.colors
             
             renderColorScheme(colors);
