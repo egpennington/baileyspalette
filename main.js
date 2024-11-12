@@ -22,13 +22,31 @@ function renderColorScheme(colors) {
     });
 }
 
+function copyToClipboard() {
+    document.querySelectorAll('.color-scheme-content').forEach(element => { 
+        element.addEventListener('click', function() {
+            const hexElement = this.querySelector('.color-code')
+            const originalText = hexElement.textContent
+                
+            navigator.clipboard.writeText(originalText).then(() => {
+                hexElement.textContent = "Copied"
+                setTimeout(() => {
+                    hexElement.textContent = originalText
+                }, 1000)
+            }).catch(err => {
+                    console.error('Failed to copy text:', err)
+            })
+        })
+    })
+}
+
 // ==== Event Listeners ====
 document.getElementById("input-color").addEventListener("input", function() {
     document.getElementById("input-color") = this.value
     inputColor.style.backgroundColor = `#${inputColor}`
 })
 
-document.querySelector(".input-choice").addEventListener("submit", function(e) {
+document.querySelector(".input-choice").addEventListener("submit", async function(e) {
     e.preventDefault()
     
     clearScheme()
@@ -36,30 +54,14 @@ document.querySelector(".input-choice").addEventListener("submit", function(e) {
     const inputColor = userInputHex.value.replace('#', '')
     const choice = document.getElementById("choices").value
     
-    fetch(`https://www.thecolorapi.com/scheme?hex=${inputColor}&mode=${choice}&count=6`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            const colors = data.colors
-            
-            renderColorScheme(colors);
-            
-            // ==== Copy to clipboard on click ====
-            document.querySelectorAll('.color-scheme-content').forEach(element => { 
-                element.addEventListener('click', function() {
-                    const hexElement = this.querySelector('.color-code')
-                    const originalText = hexElement.textContent
-                    
-                    navigator.clipboard.writeText(originalText).then(() => {
-                        hexElement.textContent = "Copied"
-                        setTimeout(() => {
-                            hexElement.textContent = originalText
-                        }, 1000)
-                    }).catch(err => {
-                        console.error('Failed to copy text:', err)
-                    })
-                })
-            })
-        })
-        .catch(err => console.error('Error fetching color scheme:', err))
+    try {
+        const res = await fetch(`https://www.thecolorapi.com/scheme?hex=${inputColor}&mode=${choice}&count=6`)
+        const data = await res.json()
+    
+        const colors = data.colors            
+        renderColorScheme(colors)            
+        copyToClipboard()
+    } catch (err) {
+        console.error('Error fetching color scheme:', err)
+    }
 })
