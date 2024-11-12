@@ -146,9 +146,9 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.color-code:hover {
+.color-scheme-content:hover {
     cursor: pointer;
-    scale: 1.1;
+    scale: 1.02;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
