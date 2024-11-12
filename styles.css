@@ -60,10 +60,35 @@ body {
 
 .user-input-hex {
     width: 3.4em;
-    height: 2em;
-    border-radius: 4px;
-    padding: 0.3em;
-    border: 1px #333 solid;
+    height: 3em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-select {
+    display: flex;    
+    align-items: center;
+}
+
+.color-select:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.color-label {
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.color-label i {
+    margin-left: 5px;
+    color: #666;
 }
 
 .color-scheme-show {
@@ -141,7 +166,7 @@ body {
         justify-content: center;
         gap: 10px;
     }
-    .user-input-hex { grid-area: hex; }
+
     .choices { grid-area: choice; }
     .input-color { grid-area: input; }
     .btn { grid-area: btn; }

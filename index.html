@@ -22,7 +22,10 @@
             <p class="tag"><i class="fa-solid fa-paintbrush"></i> Unleash your colors</p>
         </div>
         <div class="input-choice">
-            <div id="user-input-hex" class="user-input-hex"></div>
+            <div class="color-select">
+                <label for="user-input-hex" class="color-label"><i class="fa-solid fa-magnifying-glass"></i></label>           
+                <input type="color" id="user-input-hex" class="user-input-hex">
+            </div>             
             <select id="choices" class="choices" name="choices">    
                 <option value="monochrome">monochrome</option>
                 <option value="monochrome-dark">monochrome-dark</option>
@@ -33,7 +36,7 @@
                 <option value="triad">triad</option>
                 <option value="quad">quad</option>
             </select>
-            <input type="text" id="input-color" class="input-color" placeholder="enter hex ie b3b53b">
+            <input type="text" id="input-color" class="input-color" placeholder="your hex # chosen">
             <button class="btn">Get Color Scheme <i class="fa-solid fa-palette"></i></button>
         </div>        
         <div id="color-scheme-show" class="color-scheme-show"></div>
