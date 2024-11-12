@@ -112,6 +112,21 @@ body {
     transform: scale(1.03);
 }
 
+.color-code {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color:#111222;
+    letter-spacing: 2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-code:hover {
+    cursor: pointer;
+    scale: 1.1;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 @media(max-width: 500px) {
     body {
         background: red;
