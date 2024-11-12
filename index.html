@@ -12,7 +12,7 @@
         <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
-        <div class="header">
+        <header class="header">
             <span class="title-area">
                 <img class="img-logo" src="/images/bulldogLogo.png" alt="shadow image of a bulldog">
                 <h1 class="title">
@@ -20,8 +20,8 @@
                 </h1>                
             </span>
             <p class="tag"><i class="fa-solid fa-paintbrush"></i> Unleash your colors</p>
-        </div>
-        <div class="input-choice">
+        </header>
+        <form class="input-choice">
             <div class="color-select">
                 <label for="user-input-hex" class="color-label"><i class="fa-solid fa-magnifying-glass"></i></label>           
                 <input type="color" id="user-input-hex" class="user-input-hex" value="#d3d3d3">
@@ -38,7 +38,7 @@
             </select>
             <input type="text" id="input-color" class="input-color" placeholder="your hex # chosen">
             <button class="btn">Get Color Scheme <i class="fa-solid fa-palette"></i></button>
-        </div>        
+        </form>        
         <div id="color-scheme-show" class="color-scheme-show"></div>
         <script src="main.js"></script>
     </body>

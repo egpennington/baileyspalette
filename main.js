@@ -1,40 +1,46 @@
-let inputColor = ""
 const userInputHex = document.querySelector(".user-input-hex")
 
-document.getElementById("user-input-hex").addEventListener("input", function() {
-    const inputColor = this.value
-    document.getElementById("input-color").value = inputColor
+userInputHex.addEventListener("input", function() {
+    document.getElementById("input-color").value = `Base color: ${this.value}`
 })
 
 function clearScheme() {
     document.getElementById("color-scheme-show").innerHTML = ""
 }
 
+function renderColorScheme(colors) {
+    const colorSchemeContainer = document.getElementById("color-scheme-show");
+    colorSchemeContainer.innerHTML = ''
+
+    colors.forEach(color => {
+        colorSchemeContainer.innerHTML += `
+            <div class="color-scheme-content">
+                <img src='${color.image.bare}' alt='Color Image' class='image'>
+                <p class="color-code">${color.hex.value}</p>
+            </div>
+        `;
+    });
+}
+
 document.getElementById("input-color").addEventListener("input", function() {
-    inputColor = this.value
+    document.getElementById("input-color") = this.value
     inputColor.style.backgroundColor = `#${inputColor}`
 })
 
-document.querySelector("button").addEventListener("click", function() {
-    clearScheme() 
+document.querySelector(".input-choice").addEventListener("submit", function(e) {
+    e.preventDefault()
     
-    const inputColor = document.getElementById("user-input-hex").value.replace('#', '')
+    clearScheme()
+    
+    const inputColor = userInputHex.value.replace('#', '')
     const choice = document.getElementById("choices").value
     
     fetch(`https://www.thecolorapi.com/scheme?hex=${inputColor}&mode=${choice}&count=6`)
         .then(res => res.json())
         .then(data => {
             const colors = data.colors
-            document.getElementById("color-scheme-show").innerHTML = ''
             
-            colors.forEach(color => {
-                document.getElementById("color-scheme-show").innerHTML += `
-                    <div class="color-scheme-content">
-                        <img src='${color.image.bare}' alt='Color Image' class='image'>
-                        <p class="color-code">${color.hex.value}</p>
-                    </div>
-                `         
-            })
+            renderColorScheme(colors);
             
             // ==== Copy to clipboard on click ====
             document.querySelectorAll('.color-scheme-content').forEach(element => { 

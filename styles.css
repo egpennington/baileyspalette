@@ -111,6 +111,10 @@ body {
     font-size: 1.3em;
 }
 
+.input-color {
+    text-align: center;
+}
+
 .input-color,
 .choices,
 .btn {
@@ -120,7 +124,6 @@ body {
     border-radius: 6px;
 }
 
-.input-color:hover,
 .input-color:active {
     border-color: blue;
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
