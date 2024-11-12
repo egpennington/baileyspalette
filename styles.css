@@ -29,13 +29,16 @@ body {
     width: 2em;
 }
 
-.color1 { color: #FF5733; }
-.color2 { color: #FFC300; }
-.color3 { color: #DAF7A6; }
-.color4 { color: #33FF57; }
-.color5 { color: #33C4FF; }
-.color6 { color: #5B33FF; }
-.color7 { color: #FF33F6; }
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #FF5733, #FFC300, #DAF7A6, #33FF57, #33C4FF, #5B33FF, #FF33F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-align: center;
+}
 
 .tag {
     font-size: 1.7rem;
