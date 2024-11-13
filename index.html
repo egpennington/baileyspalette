@@ -12,34 +12,36 @@
         <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
-        <header class="header">
-            <span class="title-area">
-                <img class="img-logo" src="/images/bulldogLogo.png" alt="shadow image of a bulldog">
-                <h1 class="title">
-                    Bailey's Palette
-                </h1>                
-            </span>
-            <p class="tag"><i class="fa-solid fa-paintbrush"></i> Unleash your colors</p>
-        </header>
-        <form class="input-choice">
-            <div class="color-select">
-                <label for="user-input-hex" class="color-label"><i class="fa-solid fa-magnifying-glass"></i></label>           
-                <input type="color" id="user-input-hex" class="user-input-hex" value="#d3d3d3">
-            </div>             
-            <select id="choices" class="choices" name="choices">    
-                <option value="monochrome">monochrome</option>
-                <option value="monochrome-dark">monochrome-dark</option>
-                <option value="monochrome-light">monochrome-light</option>
-                <option value="analogic">analogic</option>
-                <option value="complement">complement</option>
-                <option value="analogic-complement">analogic-complement</option>
-                <option value="triad">triad</option>
-                <option value="quad">quad</option>
-            </select>
-            <input type="text" id="input-color" class="input-color" placeholder="your hex # chosen">
-            <button class="btn">Get Color Scheme <i class="fa-solid fa-palette"></i></button>
-        </form>        
-        <div id="color-scheme-show" class="color-scheme-show"></div>
+        <main class="main">
+            <header class="header">
+                <span class="title-area">
+                    <img class="img-logo" src="/images/bulldogLogo.png" alt="shadow image of a bulldog">
+                    <h1 class="title">
+                        Bailey's <span class="palette">Palette</span>
+                    </h1>                
+                </span>
+                <p class="tag"><i class="fa-solid fa-paintbrush"></i> Unleash your colors</p>
+            </header>
+            <form class="input-choice">
+                <div class="color-select">
+                    <label for="user-input-hex" class="color-label"><i class="fa-solid fa-magnifying-glass"></i>Chose color</label>           
+                    <input type="color" id="user-input-hex" class="user-input-hex" value="#d3d3d3">
+                </div>             
+                <select id="choices" class="choices" name="choices">    
+                    <option value="monochrome">monochrome</option>
+                    <option value="monochrome-dark">monochrome-dark</option>
+                    <option value="monochrome-light">monochrome-light</option>
+                    <option value="analogic">analogic</option>
+                    <option value="complement">complement</option>
+                    <option value="analogic-complement">analogic-complement</option>
+                    <option value="triad">triad</option>
+                    <option value="quad">quad</option>
+                </select>
+                <input type="text" id="input-color" class="input-color" placeholder="your hex # chosen">
+                <button class="btn">Fetch color Scheme <i class="fa-solid fa-palette"></i></button>
+            </form>        
+            <div id="color-scheme-show" class="color-scheme-show"></div>
+        </main>
         <script src="main.js"></script>
     </body>
 </html>

@@ -1,0 +1,21 @@
+@media(max-width: 500px) {
+    body {
+        background: red;
+    }
+
+    header { background: red; }
+    .input-choice {
+        display: grid;
+        grid-template-areas: 
+            "hex input"
+            "choice choice"
+            "btn btn";
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .choices { grid-area: choice; }
+    .input-color { grid-area: input; }
+    .btn { grid-area: btn; }
+}
